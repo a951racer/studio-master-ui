@@ -1,0 +1,18 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Studio Master retro palette — inspired by the login background */
+  --color-studio-orange: #c4652a;
+  --color-studio-orange-light: #d4793f;
+  --color-studio-orange-dark: #a8521e;
+  --color-studio-brown: #6b5b3e;
+  --color-studio-brown-light: #8a7a5e;
+  --color-studio-brown-dark: #4a3e2a;
+  --color-studio-olive: #5c6b3c;
+  --color-studio-olive-light: #7a8a5a;
+  --color-studio-cream: #f5efe6;
+  --color-studio-tan: #c4b99a;
+  --color-studio-red: #8b3a2a;
+  --color-studio-red-light: #a84a38;
+  --color-studio-warm-gray: #e8e0d4;
+}
