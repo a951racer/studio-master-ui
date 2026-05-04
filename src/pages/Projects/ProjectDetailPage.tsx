@@ -326,7 +326,7 @@ export default function ProjectDetailPage() {
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Files
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Portfolio
                   </th>
                   <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -354,16 +354,10 @@ export default function ProjectDetailPage() {
                     <td className="px-6 py-4 text-sm text-gray-600">
                       <FileCount songId={song._id} />
                     </td>
-                    <td className="px-6 py-4 text-sm">
+                    <td className="px-6 py-4 text-sm text-center">
                       {song.canPortfolio ? (
-                        <span className="inline-flex items-center rounded-full bg-studio-olive/20 px-2.5 py-0.5 text-xs font-medium text-studio-olive">
-                          Yes
-                        </span>
-                      ) : (
-                        <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-500">
-                          No
-                        </span>
-                      )}
+                        <span className="text-studio-olive text-base" aria-label="Portfolio approved">✓</span>
+                      ) : null}
                     </td>
                     <td className="px-6 py-4 text-sm text-right">
                       {songDeleteConfirmId === song._id ? (
