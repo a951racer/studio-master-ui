@@ -128,6 +128,20 @@ export default function SongDetailPage() {
               <dd className="mt-1 text-gray-900">{song.key}</dd>
             </div>
           )}
+          <div>
+            <dt className="font-medium text-gray-500">Portfolio</dt>
+            <dd className="mt-1">
+              {song.canPortfolio ? (
+                <span className="inline-flex items-center rounded-full bg-studio-olive/20 px-2.5 py-0.5 text-xs font-medium text-studio-olive">
+                  Approved for portfolio
+                </span>
+              ) : (
+                <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-500">
+                  Not in portfolio
+                </span>
+              )}
+            </dd>
+          </div>
         </dl>
       </div>
 

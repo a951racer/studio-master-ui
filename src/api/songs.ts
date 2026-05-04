@@ -11,6 +11,7 @@ export interface Song {
   projectId: string;
   author: string;
   key?: string;
+  canPortfolio: boolean;
   createdAt: string;
   updatedAt: string;
 }
@@ -69,6 +70,7 @@ export function useCreateSong() {
       title: string;
       author: string;
       key?: string;
+      canPortfolio?: boolean;
     }) => {
       const { projectId, ...body } = vars;
       const { data } = await apiClient.post<Song>(
@@ -95,6 +97,7 @@ export function useUpdateSong() {
       title?: string;
       author?: string;
       key?: string;
+      canPortfolio?: boolean;
     }) => {
       const { id, ...body } = vars;
       const { data } = await apiClient.put<Song>(`/api/songs/${id}`, body);

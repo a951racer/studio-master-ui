@@ -8,6 +8,7 @@ interface SongFormValues {
   title: string;
   author: string;
   key: string;
+  canPortfolio: boolean;
 }
 
 export default function SongFormPage() {
@@ -34,7 +35,7 @@ export default function SongFormPage() {
     reset,
     formState: { errors, isSubmitting },
   } = useForm<SongFormValues>({
-    defaultValues: { title: '', author: '', key: '' },
+    defaultValues: { title: '', author: '', key: '', canPortfolio: false },
   });
 
   // Pre-populate form when editing
@@ -44,6 +45,7 @@ export default function SongFormPage() {
         title: existingSong.title,
         author: existingSong.author,
         key: existingSong.key ?? '',
+        canPortfolio: existingSong.canPortfolio ?? false,
       });
     }
   }, [isEdit, existingSong, reset]);
@@ -72,6 +74,7 @@ export default function SongFormPage() {
           title: values.title.trim(),
           author: values.author.trim(),
           key: values.key.trim() || undefined,
+          canPortfolio: values.canPortfolio,
         },
         {
           onSuccess: () => navigate(`/songs/${id}`),
@@ -85,6 +88,7 @@ export default function SongFormPage() {
           title: values.title.trim(),
           author: values.author.trim(),
           key: values.key.trim() || undefined,
+          canPortfolio: values.canPortfolio,
         },
         {
           onSuccess: (data) => navigate(`/songs/${data._id}`),
@@ -168,6 +172,22 @@ export default function SongFormPage() {
             {...register('key')}
             className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-studio-orange"
           />
+        </div>
+
+        {/* Can Portfolio */}
+        <div className="flex items-center gap-3">
+          <input
+            id="canPortfolio"
+            type="checkbox"
+            {...register('canPortfolio')}
+            className="h-4 w-4 rounded border-gray-300 accent-studio-orange"
+          />
+          <label
+            htmlFor="canPortfolio"
+            className="text-sm font-medium text-gray-700"
+          >
+            Can be used in portfolio
+          </label>
         </div>
 
         {/* Actions */}
